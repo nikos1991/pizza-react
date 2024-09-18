@@ -350,9 +350,12 @@ a {
   background: #FFFFFF;
   border-radius: 10px;
   box-shadow: 0px 5px 15px 0px #00000017;
+  visibility: hidden;
 
 }
-
+.sort-list-active{
+  visibility: visible;
+}
 .sort-list span{
   display: flex;
   justify-content:left;

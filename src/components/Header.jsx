@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Header({Component}){
 
@@ -63,8 +64,9 @@ function Header({Component}){
                
             </div>
              )}
+    <Link to ="/Cart">
     {Component ? <Component /> : ''}
-        
+    </Link>  
 </div>
     );
 }
