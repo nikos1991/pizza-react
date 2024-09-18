@@ -190,8 +190,31 @@ a {
   line-height: 19.49px;
   text-align: left;
   color: #7B7B7B;
+}
 
+.button{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 211px;
+  height: 55px;
+  background-color: #FE5F1E;
+  color: #f1f1f1;
+  border-radius: 30px;
+  margin-bottom: 35px;
 
+}
+.inactive{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 211px;
+  height: 55px;
+  background-color: #FFFFFF;
+  color: #CACACA;
+  border: 1px solid #D3D3D3;
+  border-radius: 30px;
+  margin-bottom: 35px;
 }
 .cart-button{
   display: flex;
@@ -572,6 +595,7 @@ a {
   display: flex;
   align-items: center;
   width: 375px;
+    margin-left: 15px;
 
 }
 .cart-item-title-text h2{
@@ -582,6 +606,10 @@ a {
   letter-spacing: 0.01em;
   text-align: left;
 
+
+}
+.cart-item-title-text {
+  margin-left: 15px;
 }
 .cart-item-title img{
  width: 80px;
@@ -620,6 +648,7 @@ color: #FE5F1E;
 .pizza-cart-actions{
   display: flex;
   justify-content: space-between;
+  margin-top: 40px ;
 
 }
 

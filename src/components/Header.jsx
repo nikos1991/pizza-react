@@ -40,8 +40,10 @@ function Header({Component}){
         <div class = "title">
            <img  onClick={handleModalOpen} src="/img/icons/pizza.svg" />
            <div class ="title-text"> 
-                <h1>REACT PIZZA</h1>
-                <p>самая вкусная пицца по вселенной</p>
+                <Link to = "/">
+                  <h1>REACT PIZZA</h1>
+                  <p>самая вкусная пицца по вселенной</p>
+                </Link>
            </div>
         </div>
         {isModalVisible && (

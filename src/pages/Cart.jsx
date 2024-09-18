@@ -1,17 +1,10 @@
 import React from "react";
+import Header from "../components/Header";
 
 function Cart() {
     return(
         <div class ="wrapper">
-        <div class="header">
-            <div class = "title">
-               <img src="img/icons/pizza.svg" />
-               <div class ="title-text"> 
-                <h1>REACT PIZZA</h1>
-                <p>самая вкусная пицца по вселенной</p>
-               </div>
-            </div>
-         </div>
+        <Header/>
         <div class = "divider"></div>
         <div class = "content">
             <div class = "cart">
@@ -87,8 +80,8 @@ function Cart() {
 
                 </div>
                 <div class = "pizza-cart-actions">
-                    <span>Вернуться назад</span>
-                    <span>Оплатить сейчас</span>
+                    <span class ="button inactive">&lt;  Вернуться назад</span>
+                    <span class ="button">Оплатить сейчас</span>
                 </div>
 
             </div>
