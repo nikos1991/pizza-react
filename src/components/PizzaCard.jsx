@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 // import pizzaData from '../pizzas.json';
 
 function PizzaCard ({name, image, price}){
+  const [count, setCounter] = useState(0);
+  function handleClickCounter(){
+    setCounter(count +1);
+    console.log(count);
+  }
     return(
     <div class ="pizza-card">
                         <img src= {image} />
@@ -21,10 +26,10 @@ function PizzaCard ({name, image, price}){
                             <div class = "pizza-properties">
                                 <div class = "pizza-order">
                                     <span class = "pizza-price">{price}</span>
-                                    <div class = "order-button">
+                                    <div onClick={handleClickCounter} class = "order-button">
                                         <span class = "plus-icon">+</span>
-                                        <span class = "order-button-text" >Добавить</span>
-                                        <span class = "pizza-counter">2</span>
+                                        <span  class = "order-button-text" >Добавить</span>
+                                        {count != 0 ? <span class = "pizza-counter">{count}</span> : ''}
                                     </div>
                                 </div>
                             </div>
