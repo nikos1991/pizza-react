@@ -11,10 +11,7 @@ import React from 'react';
 
 function Home(){   
    
-        const [pizzas, setPizzasState] = useState([]);
-        useEffect(() => { fetch('http://localhost:3000/db/pizzas.json').then((response) => response.json()).then((json) => setPizzasState(json.pizzas))},[]);
-        console.log(pizzas);
-        
+       
         return (
         <div class="wrapper" >
     
@@ -28,8 +25,8 @@ function Home(){
                 <PizzaSort items = {[{name: 'популярности', type:'popular'},{name: 'цене', type:'pprice'},{name: 'алфавит', type:'alphabet'}]} />
            </div>
             <div class ="content-header">Все пиццы</div>
-                    <PizzaList pizzaData={pizzas}/>
-                    <PizzaList pizzaData={pizzas}/>
+                    <PizzaList />
+                    <PizzaList />
                 </div>
     
                 

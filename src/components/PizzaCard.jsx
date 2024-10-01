@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 // import pizzaData from '../pizzas.json';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchPizzas } from '../redux/store/pizzaSlice';
 
 function PizzaCard ({name, image, price}){
   const [count, setCounter] = useState(0);
@@ -43,10 +45,19 @@ function PizzaCard ({name, image, price}){
 }
 
 function PizzaList({pizzaData}) {
-  
+  const dispatch = useDispatch();
+  const { pizzas, status } = useSelector((state) => state.pizza);
+
+  useEffect(() => {
+    dispatch(fetchPizzas());
+  }, [dispatch]);
+
+  if (status === 'loading') return <p>Загрузка...</p>;
+  if (status === 'failed') return <p>Ошибка загрузки</p>;
+
     return (
       <div className="pizza-grid">
-        {pizzaData.map((pizza) => (
+        {pizzas.map((pizza) => (
           <PizzaCard 
             name={pizza.name} 
             image={pizza.img} 
