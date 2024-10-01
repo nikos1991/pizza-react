@@ -25,7 +25,7 @@ function Home(){
                 <div class="content">
                 <div class = "pizza-picker">
                 <PizzaPicker items={['Мясные','Вегетарианская', 'Гриль', 'Острые','Закрытые']}/>
-                <PizzaSort />
+                <PizzaSort items = {[{name: 'популярности', type:'popular'},{name: 'цене', type:'pprice'},{name: 'алфавит', type:'alphabet'}]} />
            </div>
             <div class ="content-header">Все пиццы</div>
                     <PizzaList pizzaData={pizzas}/>

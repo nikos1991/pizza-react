@@ -1,12 +1,20 @@
 import Reactq, { useState } from "react";
 
-function PizzaSort() {
+function PizzaSort({items}) {
     const [pickState, setpickState] = useState(false);
     const [dropdownState, setDropdownState] = useState(false);
+    const [activeItem, setActiveItem] = useState(0);
+  //  const activeSort = items[activeItem].name;
 
     function handleSortClick() {
         setDropdownState((prevState) => !prevState);
         console.log(dropdownState);
+ 
+    }
+
+    function handleActiveItem(index) {
+        setActiveItem(index);
+        console.log(index);
  
     }
 
@@ -20,14 +28,28 @@ function PizzaSort() {
         <div class = "pizza-sort">
         <span class ="sort-text">Сортировка по: </span>
         <div onClick = {() => handleSortClick()} class = "sort-picker">
-            <p> популярности</p>
-            <div   className = {`sort-list ${ dropdownState ? "sort-list-active" : ''}`}>
-                <span  class = "list-active">популярности</span> 
-                <span >цене</span> 
-                <span >по алфавиту</span>   
-            </div>
+        <p>{items[activeItem].name}</p>
+        
+            <ul class = "sort-list">
+                {items &&
+                    items.map((item, index) => (
+                        <li 
+                        onClick ={()=> handleActiveItem(index)}
+                        className = {activeItem === index ? 'list-active' : ''}
+                        >
+                            {item.name}
+                        </li>
+
+
+
+                    ))
+                }
+
+            </ul>
+
         </div>
     </div>
     );
 }
+
 export default PizzaSort;
